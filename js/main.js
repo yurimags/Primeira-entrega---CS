@@ -1,10 +1,4 @@
-/**
- * Script principal da plataforma
- * Funcionalidades gerais e melhorias de UX
- */
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll para links internos
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -22,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Adicionar classe para animações suaves
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -36,13 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observar elementos para animação
     const elementsToAnimate = document.querySelectorAll('.project-card, .stat-card, .team-member, .method-card');
     elementsToAnimate.forEach(el => {
         observer.observe(el);
     });
 
-    // Melhorar acessibilidade do menu mobile (se necessário)
     const navToggle = document.querySelector('.nav-toggle');
     if (navToggle) {
         navToggle.addEventListener('click', function() {
@@ -51,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Validação em tempo real para melhor UX
     const formInputs = document.querySelectorAll('input[required], select[required]');
     formInputs.forEach(input => {
         input.addEventListener('blur', function() {
